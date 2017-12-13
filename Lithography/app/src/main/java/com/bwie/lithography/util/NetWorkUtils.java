@@ -20,7 +20,6 @@ public class NetWorkUtils {
         if (info != null) {
             return true;
         }
-
         return false;
     }
 

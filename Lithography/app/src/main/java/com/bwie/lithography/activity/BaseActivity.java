@@ -65,5 +65,6 @@ public abstract class BaseActivity<V,P extends BasePresenter> extends AppCompatA
             //解除p与v的关联
             presenter.detachView();
         }
+        ButterKnife.unbind(this);
     }
 }

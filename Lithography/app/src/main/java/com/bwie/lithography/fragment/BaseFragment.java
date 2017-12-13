@@ -55,5 +55,6 @@ public abstract class BaseFragment<V,P extends BasePresenter> extends Fragment{
             presenter.removeCompositeDisposable();
             presenter.detachView();
         }
+        ButterKnife.unbind(this);
     }
 }
