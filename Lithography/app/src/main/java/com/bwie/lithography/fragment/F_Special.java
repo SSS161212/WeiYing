@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bwie.lithography.R;
-import com.bwie.lithography.mvp.BasePresenter;
+import com.bwie.lithography.mvp.presenter.BasePresenter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

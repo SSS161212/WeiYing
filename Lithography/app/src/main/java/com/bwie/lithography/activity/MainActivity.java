@@ -1,19 +1,16 @@
 package com.bwie.lithography.activity;
 
 import android.graphics.Color;
-import android.os.Bundle;
-import android.widget.ImageView;
 
 import com.bwie.lithography.R;
 import com.bwie.lithography.fragment.F_Choiceness;
 import com.bwie.lithography.fragment.F_Find;
 import com.bwie.lithography.fragment.F_Mine;
 import com.bwie.lithography.fragment.F_Special;
-import com.bwie.lithography.mvp.BasePresenter;
+import com.bwie.lithography.mvp.presenter.BasePresenter;
 import com.hjm.bottomtabbar.BottomTabBar;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 
 public class MainActivity extends BaseActivity {

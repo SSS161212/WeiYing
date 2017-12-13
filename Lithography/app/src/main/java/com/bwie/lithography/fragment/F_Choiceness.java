@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bwie.lithography.R;
-import com.bwie.lithography.mvp.BasePresenter;
+import com.bwie.lithography.mvp.presenter.BasePresenter;
 
 /**
  * Created by Dell on 2017/12/12.

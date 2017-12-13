@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.bwie.lithography.mvp.BasePresenter;
+import com.bwie.lithography.mvp.presenter.BasePresenter;
 
 import butterknife.ButterKnife;
 
