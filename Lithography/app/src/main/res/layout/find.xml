@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card="http://schemas.android.com/tools">
     <include layout="@layout/head"></include>
-
-</android.support.constraint.ConstraintLayout>
+<com.huxq17.swipecardsview.SwipeCardsView
+    android:id="@+id/cardView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#f3f3f3"
+    card:alphaOffsetStep="40"
+    card:scaleOffsetStep="0.08"
+    card:yOffsetStep="20dp"></com.huxq17.swipecardsview.SwipeCardsView>
+</LinearLayout>

@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.bwie.lithography.R;
 import com.bwie.lithography.mvp.presenter.BasePresenter;
+import com.huxq17.swipecardsview.SwipeCardsView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,6 +20,8 @@ import butterknife.ButterKnife;
 public class F_Find extends BaseFragment {
     @Bind(R.id.headtitle)
     TextView headtitle;
+    @Bind(R.id.cardView)
+    SwipeCardsView cardView;
 
     @Override
     protected void initDagger() {

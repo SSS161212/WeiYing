@@ -54,5 +54,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.0'
 
     //卡片左右滑动
-    compile 'com.github.bumptech.glide:glide:3.5.2'
+    compile 'com.huxq17.android:SwipeCardsView:0.0.5'
+    compile 'com.android.support:appcompat-v7:26.0.0'
 }
