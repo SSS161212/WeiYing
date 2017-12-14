@@ -1,8 +1,6 @@
 package com.bwie.lithography.activity;
 
 import android.graphics.Color;
-import android.os.Bundle;
-import android.widget.ImageView;
 
 import com.bwie.lithography.R;
 import com.bwie.lithography.fragment.F_Choiceness;
@@ -16,7 +14,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity  {
     @Bind(R.id.bottomBar)
     BottomTabBar bottomBar;
 
@@ -27,6 +25,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        ButterKnife.bind(this);
+      //  startActivity(new Intent(MainActivity.this, Main2Activity.class));
         bottomBar.init(getSupportFragmentManager())
                 .setImgSize(50, 50)
                 .setFontSize(8)
@@ -45,6 +45,8 @@ public class MainActivity extends BaseActivity {
                     }
                 });
     }
+
+
 
     @Override
     protected BasePresenter getPresenter() {
