@@ -7,7 +7,7 @@ import com.bwie.lithography.fragment.F_Choiceness;
 import com.bwie.lithography.fragment.F_Find;
 import com.bwie.lithography.fragment.F_Mine;
 import com.bwie.lithography.fragment.F_Special;
-import com.bwie.lithography.mvp.BasePresenter;
+import com.bwie.lithography.mvp.presenter.BasePresenter;
 import com.hjm.bottomtabbar.BottomTabBar;
 
 import butterknife.Bind;

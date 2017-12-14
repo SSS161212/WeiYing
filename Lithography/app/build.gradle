@@ -55,5 +55,11 @@ dependencies {
     //apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.jakewharton:butterknife:7.0.0'
 
+<<<<<<< HEAD
 
+=======
+    //卡片左右滑动
+    compile 'me.yuqirong:cardswipelayout:1.0.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+>>>>>>> de886d4a0f747ff584bbc3df43a0b0416f1a5e36
 }

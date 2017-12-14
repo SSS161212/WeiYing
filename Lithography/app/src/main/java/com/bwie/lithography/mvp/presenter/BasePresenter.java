@@ -1,4 +1,4 @@
-package com.bwie.lithography.mvp;
+package com.bwie.lithography.mvp.presenter;
 
 import java.lang.ref.WeakReference;
 

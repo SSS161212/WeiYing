@@ -7,7 +7,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bwie.lithography.R;
-import com.bwie.lithography.mvp.BasePresenter;
+import com.bwie.lithography.api.Api;
+import com.bwie.lithography.bean.FindBean;
+import com.bwie.lithography.dagger.DaggerMyComponent;
+import com.bwie.lithography.mvp.presenter.FindPresenter;
+import com.bwie.lithography.mvp.view.FindView;
+
+import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -16,13 +22,18 @@ import butterknife.ButterKnife;
  * Created by Dell on 2017/12/12.
  */
 
-public class F_Find extends BaseFragment {
+public class F_Find extends BaseFragment<FindView, FindPresenter> implements FindView {
+
+    @Inject
+    FindPresenter presenter;
     @Bind(R.id.headtitle)
     TextView headtitle;
 
+    private FindBean findData;
+
     @Override
     protected void initDagger() {
-
+        DaggerMyComponent.create().inject(this);
     }
 
     @Override
@@ -33,11 +44,23 @@ public class F_Find extends BaseFragment {
     @Override
     protected void initView() {
         headtitle.setText("发现");
+        presenter.getVideoList(Api.CATALOGID, 10 + "");
     }
 
     @Override
-    protected BasePresenter getPresenter() {
-        return null;
+    protected FindPresenter getPresenter() {
+        return presenter;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
+
+    @Override
+    public void getVideoList(FindBean findBean) {
+        findData = findBean;
     }
 
     @Override
@@ -46,11 +69,5 @@ public class F_Find extends BaseFragment {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }
