@@ -24,6 +24,8 @@ public abstract class BaseFragment<V,P extends BasePresenter> extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         initDagger();
+        //绑定ButterKnife
+        ButterKnife.bind(getActivity());
         presenter = getPresenter();
         if (presenter != null){
             presenter.attachView((V)this);
@@ -39,8 +41,6 @@ public abstract class BaseFragment<V,P extends BasePresenter> extends Fragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //绑定ButterKnife
-        ButterKnife.bind(getActivity());
         initView();
     }
 
