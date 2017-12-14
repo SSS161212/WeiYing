@@ -32,8 +32,6 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
     FindPresenter presenter;
     @Bind(R.id.headtitle)
     TextView headtitle;
-    @Bind(R.id.cardview)
-    SwipeFlingAdapterView cardview;
 
     private FindBean findData;
 
@@ -51,41 +49,6 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
     protected void initView() {
         headtitle.setText("发现");
         presenter.getVideoList(Api.CATALOGID, 10 + "");
-        cardview.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
-            @Override
-            public void removeFirstObjectInAdapter() {
-
-            }
-            @Override
-            public void onLeftCardExit(Object dataObject) {
-                makeToast(getActivity(), "不喜欢");
-            }
-
-            @Override
-            public void onRightCardExit(Object dataObject) {
-                makeToast(getActivity(), "喜欢");
-            }
-
-            @Override
-            public void onAdapterAboutToEmpty(int itemsInAdapter) {
-
-            }
-            @Override
-            public void onScroll(float scrollProgressPercent) {
-//                View view = cardview.getSelectedView();
-//                view.findViewById(R.id.item_swipe_right_indicator).setAlpha(scrollProgressPercent < 0 ? -scrollProgressPercent : 0);
-//                view.findViewById(R.id.item_swipe_left_indicator).setAlpha(scrollProgressPercent > 0 ? scrollProgressPercent : 0);
-            }
-        });
-
-
-        cardview
-                .setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClicked(int itemPosition, Object dataObject) {
-                makeToast(getActivity(), "点击图片");
-            }
-        });
     }
 
     @Override
@@ -102,8 +65,6 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
     @Override
     public void getVideoList(FindBean findBean) {
         findData = findBean;
-        CardAdapter adapter = new CardAdapter(getActivity(),findBean);
-        cardview.setAdapter(adapter);
     }
 
     @Override
@@ -112,16 +73,5 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
-    }
-
-    static void makeToast(Context ctx, String s) {
-        Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
-    }
-    public void right() {
-        cardview.getTopCardListener().selectRight();
-    }
-
-    public void left() {
-        cardview.getTopCardListener().selectLeft();
     }
 }

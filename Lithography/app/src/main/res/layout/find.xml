@@ -5,10 +5,5 @@
     android:layout_height="match_parent"
     >
     <include layout="@layout/head"></include>
-<com.bwie.lithography.view.SwipeFlingAdapterView
-    android:id="@+id/cardview"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/card_bg_def"
-    ></com.bwie.lithography.view.SwipeFlingAdapterView>
+
 </LinearLayout>

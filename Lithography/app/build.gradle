@@ -55,5 +55,5 @@ dependencies {
 
     //卡片左右滑动
     compile 'me.yuqirong:cardswipelayout:1.0.0'
-    compile 'com.android.support:recyclerview-v7:26.0.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
 }
