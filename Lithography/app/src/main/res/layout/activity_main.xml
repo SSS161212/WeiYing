@@ -1,17 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.bwie.lithography.FoldSlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.bwie.lithography.activity.MainActivity">
-    <com.hjm.bottomtabbar.BottomTabBar
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@mipmap/bg_blue"
-        android:layout_gravity="bottom"
-        android:layout_weight="1">
-    </com.hjm.bottomtabbar.BottomTabBar>
 
-</FrameLayout>
+    <fragment
+        android:id="@+id/id_left_menu"
+        android:name="com.bwie.lithography.LeftMenuFragment"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"/>
+    <!-- <com.bwie.lithography.SlidingMenu
+         android:layout_weight="1"
+         android:id="@+id/id_menu"
+         android:layout_width="match_parent"
+         android:layout_height="335dp">
+ -->
+ <!--       <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="555dp"
+            android:orientation="horizontal">
+
+            <include
+                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                layout="@layout/left_num"/>
+
+            <LinearLayout
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="555dp"
+                    android:text="切换菜单"
+                    android:textSize="21sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.bwie.lithography.SlidingMenu>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hjm.bottomtabbar.BottomTabBar
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_blue"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+        </com.hjm.bottomtabbar.BottomTabBar>
+    </FrameLayout>
+
+
+</com.bwie.lithography.FoldSlidingPaneLayout>
