@@ -1,24 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="400dp"
+    android:layout_height="550dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="30dp"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/find_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="550dp"
         android:layout_gravity="center"
-        android:textColor="#ffff"/>
-    <ImageView
-        android:id="@+id/find_pic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        />
-    <TextView
-        android:id="@+id/find_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="#ffff"/>
+        android:background="@mipmap/card_bg_def"
+        >
+        <TextView
+            android:id="@+id/headTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="小姐姐"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"/>
+        <ImageView
+            android:id="@+id/cardview"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/headTitle"
+            android:layout_marginTop="20dp"/>
+        <ImageView
+            android:id="@+id/iv_dislike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="46dp"
+            android:alpha="0"
+             />
+
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="46dp"
+            android:alpha="0"
+             />
+        <TextView
+            android:id="@+id/headcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_below="@id/cardview"
+            android:layout_marginTop="20dp"
+            />
+
+    </RelativeLayout>
 </LinearLayout>

@@ -3,7 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="true"
     >
-    <include layout="@layout/head"></include>
-
+    <include layout="@layout/head"
+        android:layout_height="70dp"
+        android:layout_width="match_parent"></include>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="400dp"
+        android:layout_height="550dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/find_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="换一批"
+        android:textColor="#ffff"
+        android:background="#669900"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:drawableBottom="@null"
+        />
 </LinearLayout>
