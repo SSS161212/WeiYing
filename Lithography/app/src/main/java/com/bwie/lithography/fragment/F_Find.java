@@ -3,6 +3,7 @@ package com.bwie.lithography.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -17,7 +18,7 @@ import com.bumptech.glide.Glide;
 import com.bwie.lithography.R;
 import com.bwie.lithography.activity.VideoPlayerActivity;
 import com.bwie.lithography.api.Api;
-import com.bwie.lithography.app.FindBean;
+import com.bwie.lithography.bean.FindBean;
 import com.bwie.lithography.dagger.DaggerMyComponent;
 import com.bwie.lithography.mvp.presenter.FindPresenter;
 import com.bwie.lithography.mvp.view.FindView;
@@ -26,7 +27,6 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import me.yuqirong.cardswipelayout.CardConfig;
 import me.yuqirong.cardswipelayout.CardItemTouchHelperCallback;
 import me.yuqirong.cardswipelayout.CardLayoutManager;
 import me.yuqirong.cardswipelayout.OnSwipeListener;
@@ -111,7 +111,7 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
             @Override
             public void cardClick(int position) {
                 Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
-                intent.putExtra("video",findData.getRet().getList().get(position));
+                intent.putExtra("video", (Parcelable) findData.getRet().getList().get(position));
                 startActivity(intent);
             }
         });
@@ -127,10 +127,10 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
     }
 
     @Override
-<<<<<<< HEAD
     protected int getLayoutId() {
         return R.layout.find;
-=======
+    }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.find_change:
@@ -138,6 +138,7 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
                 break;
         }
     }
+
 
     private static class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private Context context;
@@ -200,6 +201,5 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
         interface cardClickListener{
             void cardClick(int position);
         }
->>>>>>> 9a5c654333561950e342cd94ec8e9379cd05db22
     }
 }

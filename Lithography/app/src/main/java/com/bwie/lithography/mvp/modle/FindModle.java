@@ -1,7 +1,7 @@
 package com.bwie.lithography.mvp.modle;
 
 import com.bwie.lithography.api.Api;
-import com.bwie.lithography.app.FindBean;
+import com.bwie.lithography.bean.FindBean;
 import com.bwie.lithography.inter.ApiService;
 import com.bwie.lithography.util.RetrofitClent;
 

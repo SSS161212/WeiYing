@@ -12,13 +12,13 @@ import com.bwie.lithography.mvp.presenter.BasePresenter;
 
 public class F_JianJie extends BaseFragment{
     @Override
-    protected void initDagger() {
-
+    protected int getLayoutId() {
+        return 0;
     }
 
     @Override
-    protected View getLayout(LayoutInflater inflater, ViewGroup container) {
-        return null;
+    protected void initDagger() {
+
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.bwie.lithography.mvp.presenter;
 
+import com.bwie.lithography.bean.FindBean;
 import com.bwie.lithography.mvp.modle.FindModle;
 import com.bwie.lithography.mvp.view.FindView;
 
@@ -21,7 +22,7 @@ public class FindPresenter extends BasePresenter<FindView>{
         modlel.getVodeoList(catalogId, pnum, new FindModle.sendData() {
             @Override
             public void send(Object o) {
-                //getView().getVideoList((FindBean) o);
+                getView().getVideoList((FindBean) o);
             }
         });
     }
