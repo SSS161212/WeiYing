@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,9 @@ import com.bumptech.glide.Glide;
 import com.bwie.lithography.R;
 import com.bwie.lithography.activity.VideoPlayerActivity;
 import com.bwie.lithography.api.Api;
-import com.bwie.lithography.app.FindBean;
+import com.bwie.lithography.bean.DetailBean;
+import com.bwie.lithography.bean.FindBean;
+import com.bwie.lithography.bean.VideoRes;
 import com.bwie.lithography.dagger.DaggerMyComponent;
 import com.bwie.lithography.mvp.presenter.FindPresenter;
 import com.bwie.lithography.mvp.view.FindView;
@@ -26,7 +29,6 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import me.yuqirong.cardswipelayout.CardConfig;
 import me.yuqirong.cardswipelayout.CardItemTouchHelperCallback;
 import me.yuqirong.cardswipelayout.CardLayoutManager;
 import me.yuqirong.cardswipelayout.OnSwipeListener;
@@ -39,26 +41,27 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
 
     @Inject
     FindPresenter presenter;
-    @Bind(R.id.headtitle)
-    TextView headtitle;
-    @Bind(R.id.find_change)
-    Button findChange;
-    @Bind(R.id.recyclerView)
-    RecyclerView recyclerView;
 
     private static FindBean findData;
+    @Bind(R.id.headtitle)
+    TextView headtitle;
+    @Bind(R.id.recyclerView)
+    RecyclerView recyclerView;
+    @Bind(R.id.find_change)
+    Button findChange;
+    private DetailBean detailBean;
 
     @Override
     protected void initDagger() {
         DaggerMyComponent.create().inject(this);
-}
+    }
 
 
     @Override
     protected void initView() {
         headtitle.setText("发现");
         findChange.setOnClickListener(this);
-        presenter.getVideoList(Api.CATALOGID, 10 + "");
+        presenter.getVideoList(Api.CATALOGID, 2 + "");
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
@@ -68,17 +71,11 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
-    @Override
-    public void getVideoList(FindBean findBean) {
+    public void getVideoList(final FindBean findBean) {
         MyAdapter adapter = new MyAdapter(getActivity(), findBean);
         findData = findBean;
         recyclerView.setAdapter(adapter);
-        CardItemTouchHelperCallback cardCallback = new CardItemTouchHelperCallback(recyclerView.getAdapter(),findData.getRet().getList());
+        CardItemTouchHelperCallback cardCallback = new CardItemTouchHelperCallback(recyclerView.getAdapter(), findData.getRet().getList());
         cardCallback.setOnSwipedListener(new OnSwipeListener<FindBean.RetBean.ListBean>() {
             @Override
             public void onSwiping(RecyclerView.ViewHolder viewHolder, float ratio, int direction) {
@@ -110,33 +107,51 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
         adapter.setCardClickListener(new MyAdapter.cardClickListener() {
             @Override
             public void cardClick(int position) {
-                Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
-                intent.putExtra("video",findData.getRet().getList().get(position));
-                startActivity(intent);
+                presenter.getDetail(findBean.getRet().getList().get(position).getDataId());
+                presenter.getComment(findBean.getRet().getList().get(position).getDataId(),(int) (Math.random() * 9) + "");
             }
         });
     }
 
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.bind(this, rootView);
-        return rootView;
+    public void getDetail(DetailBean detailBean) {
+        this.detailBean = detailBean;
     }
 
     @Override
-<<<<<<< HEAD
+    public void getComment(VideoRes videoRes) {
+        Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
+        intent.putExtra("detail", detailBean);
+        intent.putExtra("videoRes",videoRes);
+        Log.i("cxcxcx",videoRes.getRet().getList().size()+"");
+        startActivity(intent);
+    }
+
+    @Override
     protected int getLayoutId() {
         return R.layout.find;
-=======
+    }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.find_change:
                 presenter.getVideoList(Api.CATALOGID, (int) (Math.random() * 9) + "");
                 break;
         }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 
     private static class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -191,15 +206,15 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
                 dislikeImageView = (ImageView) itemView.findViewById(R.id.iv_dislike);
             }
         }
+
         private cardClickListener cardClickListener;
 
         public void setCardClickListener(MyAdapter.cardClickListener cardClickListener) {
             this.cardClickListener = cardClickListener;
         }
 
-        interface cardClickListener{
+        interface cardClickListener {
             void cardClick(int position);
         }
->>>>>>> 9a5c654333561950e342cd94ec8e9379cd05db22
     }
 }

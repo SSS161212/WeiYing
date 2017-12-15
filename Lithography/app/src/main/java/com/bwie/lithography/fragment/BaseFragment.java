@@ -19,12 +19,10 @@ import butterknife.ButterKnife;
 
 public abstract class BaseFragment<V,P extends BasePresenter> extends Fragment{
     public P presenter;
-    private int layoutId;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(getLayoutId(), container, false);
         initDagger();
         //绑定ButterKnife
         ButterKnife.bind(getActivity());
@@ -32,7 +30,7 @@ public abstract class BaseFragment<V,P extends BasePresenter> extends Fragment{
         if (presenter != null) {
             presenter.attachView((V) this);
         }
-        return view;
+        return inflater.inflate(getLayoutId(), container, false);
     }
 
     protected abstract int getLayoutId();

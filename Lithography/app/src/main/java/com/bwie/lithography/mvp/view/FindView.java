@@ -1,6 +1,7 @@
 package com.bwie.lithography.mvp.view;
-
-import com.bwie.lithography.app.FindBean;
+import com.bwie.lithography.bean.DetailBean;
+import com.bwie.lithography.bean.FindBean;
+import com.bwie.lithography.bean.VideoRes;
 
 /**
  * Created by Dell on 2017/12/13.
@@ -8,4 +9,6 @@ import com.bwie.lithography.app.FindBean;
 
 public interface FindView {
     void getVideoList(FindBean findBean);
+    void getDetail(DetailBean detailBean);
+    void getComment(VideoRes videoRes);
 }

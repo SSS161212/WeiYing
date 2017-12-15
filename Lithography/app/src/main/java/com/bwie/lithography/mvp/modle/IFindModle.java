@@ -6,4 +6,6 @@ package com.bwie.lithography.mvp.modle;
 
 public interface IFindModle {
     void getVodeoList(String catalogId, String pnum, FindModle.sendData sendData);
+    void getDetail(String mediaId, FindModle.sendData sendData);
+    void getComment(String mediaId,String pnum,FindModle.sendData sendData);
 }
