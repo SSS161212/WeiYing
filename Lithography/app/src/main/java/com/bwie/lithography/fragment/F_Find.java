@@ -3,6 +3,7 @@ package com.bwie.lithography.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -110,7 +111,7 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
             @Override
             public void cardClick(int position) {
                 Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
-                intent.putExtra("video",findData.getRet().getList().get(position));
+                intent.putExtra("video", (Parcelable) findData.getRet().getList().get(position));
                 startActivity(intent);
             }
         });
@@ -127,7 +128,12 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
 
     @Override
     protected int getLayoutId() {
+<<<<<<< HEAD
         return R.layout.find;}
+=======
+        return R.layout.find;
+    }
+>>>>>>> f588ae587bd7b307b71b91d7f0ff41e6fe85bd70
 
     public void onClick(View view) {
         switch (view.getId()) {
@@ -136,6 +142,7 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
                 break;
         }
     }
+
 
     private static class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private Context context;
