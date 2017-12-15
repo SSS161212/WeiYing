@@ -1,9 +1,5 @@
 package com.bwie.lithography.fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.bwie.lithography.mvp.presenter.BasePresenter;
 
 /**
@@ -12,14 +8,15 @@ import com.bwie.lithography.mvp.presenter.BasePresenter;
 
 public class F_JianJie extends BaseFragment{
     @Override
+    protected int getLayoutId() {
+        return 0;
+    }
+
+    @Override
     protected void initDagger() {
 
     }
 
-    @Override
-    protected View getLayout(LayoutInflater inflater, ViewGroup container) {
-        return null;
-    }
 
     @Override
     protected void initView() {

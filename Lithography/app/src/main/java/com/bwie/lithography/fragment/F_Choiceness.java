@@ -2,11 +2,12 @@ package com.bwie.lithography.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bwie.lithography.HomeVideoAdapter;
+import com.bwie.lithography.adapter.HomeVideoAdapter;
 import com.bwie.lithography.R;
 import com.bwie.lithography.bean.HomeBean;
 import com.bwie.lithography.dagger.DaggerMyComponent;
@@ -15,6 +16,7 @@ import com.bwie.lithography.mvp.view.HomeView;
 import com.bwie.lithography.util.MyImageLoader;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
 import com.youth.banner.transformer.CubeOutTransformer;
 
 import java.util.ArrayList;
@@ -70,15 +72,23 @@ public class F_Choiceness extends BaseFragment<HomeView, HomePresenter> implemen
     @Override
     public void getBann(HomeBean bean) {
 
+       banne(bean);
+
+        HomeVideoAdapter homeVideoAdapter = new HomeVideoAdapter(bean, getActivity());
+        recy.setAdapter(homeVideoAdapter);
+
+    }
+
+    private void banne(HomeBean bean) {
         List bannerList=new ArrayList<String>();
         for (int i = 0; i < bean.getRet().getList().get(0).getChildList().size(); i++) {
             String pic = bean.getRet().getList().get(0).getChildList().get(i).getPic();
             bannerList.add(pic);
+            Log.i("ll",bannerList.toString());
         }
-        banner.setImages(bannerList).setBannerAnimation(CubeOutTransformer.class).setImageLoader(new MyImageLoader()).start();
-        HomeVideoAdapter homeVideoAdapter = new HomeVideoAdapter(bean, getActivity());
-        recy.setAdapter(homeVideoAdapter);
-
+        banner.setImages(bannerList).setBannerAnimation(CubeOutTransformer.class)
+                .setBannerStyle(BannerConfig.NUM_INDICATOR)
+                .setImageLoader(new MyImageLoader()).start();
     }
 
     @Override
