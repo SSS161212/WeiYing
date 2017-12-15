@@ -59,8 +59,8 @@ public class RetrofitClent {
                 .cache(new Cache(sdcache, cacheSize))
                 .build();
         retrofit = new Retrofit.Builder()
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okHttpClient)
                 .baseUrl(baseUrl)
                 .build();

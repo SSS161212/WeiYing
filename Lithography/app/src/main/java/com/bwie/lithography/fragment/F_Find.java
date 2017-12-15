@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.bwie.lithography.R;
 import com.bwie.lithography.api.Api;
-import com.bwie.lithography.bean.FindBean;
+import com.bwie.lithography.app.FindBean;
 import com.bwie.lithography.dagger.DaggerMyComponent;
 import com.bwie.lithography.mvp.presenter.FindPresenter;
 import com.bwie.lithography.mvp.view.FindView;
@@ -34,12 +34,8 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
     @Override
     protected void initDagger() {
         DaggerMyComponent.create().inject(this);
-    }
+}
 
-    @Override
-    protected View getLayout(LayoutInflater inflater, ViewGroup container) {
-        return inflater.inflate(R.layout.find, container, false);
-    }
 
     @Override
     protected void initView() {
@@ -69,5 +65,10 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.find;
     }
 }

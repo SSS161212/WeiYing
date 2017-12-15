@@ -24,12 +24,6 @@ public class F_Special extends BaseFragment {
     protected void initDagger() {
 
     }
-
-    @Override
-    protected View getLayout(LayoutInflater inflater, ViewGroup container) {
-        return inflater.inflate(R.layout.special, container, false);
-    }
-
     @Override
     protected void initView() {
         headtitle.setText("专题");
@@ -46,6 +40,11 @@ public class F_Special extends BaseFragment {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.special;
     }
 
     @Override

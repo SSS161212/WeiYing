@@ -1,14 +1,13 @@
 package com.bwie.lithography.mvp.modle;
 
 import com.bwie.lithography.api.Api;
-import com.bwie.lithography.bean.FindBean;
+import com.bwie.lithography.app.FindBean;
 import com.bwie.lithography.inter.ApiService;
 import com.bwie.lithography.util.RetrofitClent;
 
 import javax.inject.Inject;
 
 import io.reactivex.Flowable;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subscribers.DisposableSubscriber;

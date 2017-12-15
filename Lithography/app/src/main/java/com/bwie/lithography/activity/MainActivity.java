@@ -14,7 +14,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-public class MainActivity extends BaseActivity  {
+public class MainActivity extends BaseActivity {
+
     @Bind(R.id.bottomBar)
     BottomTabBar bottomBar;
 
@@ -26,7 +27,7 @@ public class MainActivity extends BaseActivity  {
     @Override
     protected void initView() {
         ButterKnife.bind(this);
-      //  startActivity(new Intent(MainActivity.this, Main2Activity.class));
+        //  startActivity(new Intent(MainActivity.this, Main2Activity.class));
         bottomBar.init(getSupportFragmentManager())
                 .setImgSize(50, 50)
                 .setFontSize(8)
@@ -45,7 +46,6 @@ public class MainActivity extends BaseActivity  {
                     }
                 });
     }
-
 
 
     @Override

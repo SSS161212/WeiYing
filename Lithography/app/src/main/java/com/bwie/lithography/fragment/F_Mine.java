@@ -26,11 +26,6 @@ public class F_Mine extends BaseFragment {
     }
 
     @Override
-    protected View getLayout(LayoutInflater inflater, ViewGroup container) {
-        return inflater.inflate(R.layout.mine, container, false);
-    }
-
-    @Override
     protected void initView() {
         headtitle.setText("我的");
     }
@@ -46,6 +41,11 @@ public class F_Mine extends BaseFragment {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.mine;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.bwie.lithography.dagger;
 
+import com.bwie.lithography.fragment.F_Choiceness;
 import com.bwie.lithography.fragment.F_Find;
 
 import dagger.Component;
@@ -10,4 +11,5 @@ import dagger.Component;
 @Component(modules = MyMoudle.class)
 public interface MyComponent {
     public void inject(F_Find f_find);
+    public void inject(F_Choiceness f_choiceness);
 }

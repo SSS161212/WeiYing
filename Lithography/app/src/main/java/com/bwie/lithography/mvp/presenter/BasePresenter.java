@@ -5,6 +5,7 @@ import java.lang.ref.WeakReference;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
+
 /**
  * 1:类的用途
  * 2：@author Dell
@@ -16,7 +17,7 @@ public class BasePresenter<V> {
     //弱引用管理view
     private WeakReference<V> weakReference;
     //订阅者管理器
-    private CompositeDisposable compositeDisposable;
+   private CompositeDisposable compositeDisposable;
 
     //关联view
     public void attachView(V view) {
