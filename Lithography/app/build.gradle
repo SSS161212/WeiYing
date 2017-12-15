@@ -6,7 +6,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.bwie.lithography"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:26.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
@@ -54,6 +54,11 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.0'
 
     //卡片左右滑动
+    //compile 'com.github.fashare2015:StackLayout:1.0.0'
     compile 'me.yuqirong:cardswipelayout:1.0.0'
-    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.0.0'
+
+    compile 'cn.jzvd:jiaozivideoplayer:6.2.3'
+
+    compile 'com.android.support:design:26.0.0'
 }

@@ -1,12 +1,13 @@
 package com.bwie.lithography.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Dell on 2017/12/13.
  */
 
-public class FindBean {
+public class FindBean implements Serializable{
 
 
     /**
@@ -43,7 +44,7 @@ public class FindBean {
         this.code = code;
     }
 
-    public static class RetBean {
+    public static class RetBean implements Serializable{
         /**
          * adv : {"imgURL":"","dataId":"","htmlURL":"","shareURL":"","title":""}
          * pnum : 10
@@ -118,7 +119,7 @@ public class FindBean {
             this.list = list;
         }
 
-        public static class AdvBean {
+        public static class AdvBean implements Serializable{
             /**
              * imgURL :
              * dataId :
@@ -174,7 +175,7 @@ public class FindBean {
             }
         }
 
-        public static class ListBean {
+        public static class ListBean implements Serializable{
             /**
              * airTime : 2017
              * duration : 00:01:19
