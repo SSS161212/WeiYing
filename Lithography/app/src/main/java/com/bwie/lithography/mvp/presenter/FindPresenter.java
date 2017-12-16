@@ -5,6 +5,7 @@ import android.util.Log;
 import com.bwie.lithography.bean.DetailBean;
 import com.bwie.lithography.bean.FindBean;
 import com.bwie.lithography.bean.VideoRes;
+import com.bwie.lithography.bean.FindBean;
 import com.bwie.lithography.mvp.modle.FindModle;
 import com.bwie.lithography.mvp.view.FindView;
 

@@ -1,30 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.bwie.lithography.FoldSlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    xmlns:drakeet="http://schemas.android.com/apk/res-auto"
     tools:context="com.bwie.lithography.activity.MainActivity">
 
-    <fragment
-        android:id="@+id/id_left_menu"
-        android:name="com.bwie.lithography.LeftMenuFragment"
-        android:layout_width="240dp"
-        android:layout_height="match_parent"/>
-    <FrameLayout
+
+    <com.bwie.lithography.QQSliddingMenu
+        android:id="@+id/qqsm"
+        drakeet:rigthtPadding="160dp"
+        android:background="@mipmap/img_frame_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.hjm.bottomtabbar.BottomTabBar
-            android:id="@+id/bottomBar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@mipmap/bg_blue"
-            android:layout_gravity="bottom"
-            android:layout_weight="1">
-        </com.hjm.bottomtabbar.BottomTabBar>
-    </FrameLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
 
+            <include layout="@layout/left_num"/>
 
-</com.bwie.lithography.FoldSlidingPaneLayout>
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">-->
+                <FrameLayout
+                    android:onClick="toggleMenu"
+                    android:id="@+id/sli"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.hjm.bottomtabbar.BottomTabBar
+                        android:id="@+id/bottomBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/bg_blue"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+                    </com.hjm.bottomtabbar.BottomTabBar>
+                </FrameLayout>
+
+            </LinearLayout>
+       <!-- </LinearLayout>-->
+    </com.bwie.lithography.QQSliddingMenu>
+</RelativeLayout>

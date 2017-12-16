@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bwie.lithography.R;
 import com.bwie.lithography.adapter.LikesAdapter;
 import com.bwie.lithography.bean.DetailBean;
+
 import com.bwie.lithography.mvp.presenter.BasePresenter;
 
 import java.io.Serializable;
@@ -33,16 +34,15 @@ public class F_JianJie extends BaseFragment {
     TextView director;
     @Bind(R.id.actor)
     TextView actor;
-
     @Override
     protected int getLayoutId() {
-        return R.layout.jianjiefragment;
-    }
+        return R.layout.jianjiefragment;}
 
     @Override
     protected void initDagger() {
 
     }
+
 
     @Override
     protected void initView() {

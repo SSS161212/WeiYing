@@ -1,5 +1,6 @@
 package com.bwie.lithography.inter;
 import com.bwie.lithography.bean.DetailBean;
+
 import com.bwie.lithography.bean.FindBean;
 import com.bwie.lithography.bean.HomeBean;
 import com.bwie.lithography.bean.VideoRes;
@@ -24,6 +25,7 @@ public interface ApiService {
 
     @GET("videoDetailApi/videoDetail.do")
     Flowable<DetailBean> getDetail(@Query("mediaId") String mediaId);
+
 
     /**
      * 获取评论列表

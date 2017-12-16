@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bwie.lithography.R;
 import com.bwie.lithography.adapter.CommentAdapter;
 import com.bwie.lithography.bean.VideoRes;
+
 import com.bwie.lithography.mvp.presenter.BasePresenter;
 
 import butterknife.Bind;
@@ -32,10 +33,12 @@ public class F_PingLun extends BaseFragment {
         return R.layout.commentfragment;
     }
 
+
     @Override
     protected void initDagger() {
 
     }
+
 
     @Override
     protected void initView() {

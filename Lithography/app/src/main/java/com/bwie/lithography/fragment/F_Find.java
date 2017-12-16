@@ -3,6 +3,7 @@ package com.bwie.lithography.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -21,6 +22,7 @@ import com.bwie.lithography.api.Api;
 import com.bwie.lithography.bean.DetailBean;
 import com.bwie.lithography.bean.FindBean;
 import com.bwie.lithography.bean.VideoRes;
+import com.bwie.lithography.bean.FindBean;
 import com.bwie.lithography.dagger.DaggerMyComponent;
 import com.bwie.lithography.mvp.presenter.FindPresenter;
 import com.bwie.lithography.mvp.view.FindView;
@@ -132,6 +134,7 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
         return R.layout.find;
     }
 
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.find_change:
@@ -153,6 +156,7 @@ public class F_Find extends BaseFragment<FindView, FindPresenter> implements Fin
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
 
     private static class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private Context context;

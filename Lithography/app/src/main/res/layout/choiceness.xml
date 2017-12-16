@@ -4,7 +4,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/head"></include>
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        layout="@layout/head"></include>
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/recy"
         android:layout_width="match_parent"
