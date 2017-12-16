@@ -5,6 +5,7 @@ package com.bwie.lithography.api;
  */
 
 public class Api {
+
     public static final String HOST = "http://api.svipmovie.com/front/";
     public static final String CATALOGID = "402834815584e463015584e539330016";
 }

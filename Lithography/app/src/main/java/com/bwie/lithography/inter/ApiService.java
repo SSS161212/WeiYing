@@ -4,6 +4,8 @@ import com.bwie.lithography.bean.DetailBean;
 import com.bwie.lithography.bean.FindBean;
 import com.bwie.lithography.bean.HomeBean;
 import com.bwie.lithography.bean.VideoRes;
+import com.bwie.lithography.bean.Mainpage;
+import com.bwie.lithography.bean.VideoXQ;
 
 import io.reactivex.Flowable;
 import retrofit2.http.GET;
@@ -19,10 +21,6 @@ public interface ApiService {
     @GET("homePageApi/homePage.do")
     Flowable<HomeBean> getHome();
 
-    //发现
-    @GET("columns/getVideoList.do")
-    Flowable<FindBean> getFindVideoList(@Query("catalogId") String catalogId , @Query("pnum") String pnum);
-
     @GET("videoDetailApi/videoDetail.do")
     Flowable<DetailBean> getDetail(@Query("mediaId") String mediaId);
 
@@ -35,4 +33,27 @@ public interface ApiService {
      */
     @GET("Commentary/getCommentList.do")
     Flowable<VideoRes> getCommentList(@Query("mediaId") String mediaId, @Query("pnum") String pnum);
+
+
+    /**
+     * 首页
+     * @return
+     */
+    @GET("homePageApi/homePage.do")
+    Flowable<Mainpage> gethomeUrl();
+
+
+    //发现
+    @GET("columns/getVideoList.do")
+    Flowable<FindBean> getFindVideoList(@Query("catalogId") String catalogId, @Query("pnum") String pnum);
+
+
+    /**
+     * 影片分类列表
+     * @param catalogId
+     * @param information
+     */
+    @GET("columns/getVideoList.do")
+    Flowable<VideoXQ> getVideoFL(@Query("catalogId") String catalogId, @Query("information") int information);
+
 }

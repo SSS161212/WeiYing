@@ -24,6 +24,7 @@ import io.reactivex.subscribers.DisposableSubscriber;
  */
 
 public class FindModle implements IFindModle{
+
     @Inject
     public FindModle() {
     }

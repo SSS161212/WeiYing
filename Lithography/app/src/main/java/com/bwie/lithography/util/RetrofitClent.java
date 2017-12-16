@@ -58,6 +58,7 @@ public class RetrofitClent {
                 .addNetworkInterceptor(new CacheInterceptor())
                 .cache(new Cache(sdcache, cacheSize))
                 .build();
+
         retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

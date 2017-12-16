@@ -25,8 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activity.VideoPlayerActivity"></activity>
-        <activity android:name=".activity.Main2Activity"></activity>
+
+
+        <activity android:name=".activity.XQActivity"></activity>
+
     </application>
 
 </manifest>
